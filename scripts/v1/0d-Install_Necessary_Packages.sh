@@ -1,5 +1,9 @@
 #!/bin/bash
 
+ENV=EdgeNode
+
+if [ "$( hostname )" != "edgenod" ]; then echo; echo ">>> Plz Execute this Script on $ENV <<<"; echo; exit; fi
+
 # --------------------------------------
 
 yum --enablerepo=extras -y install epel-release 
