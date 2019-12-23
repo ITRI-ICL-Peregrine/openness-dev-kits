@@ -34,8 +34,11 @@ done
 systemctl restart chronyd
 
 ## Verify Time Synchronization
-echo; echo "Syncronizing...."; echo
-sleep 5
+
+while : ;do
+	if [ "$( chronyc tracking |grep Leap |cut -d":" -f2 )" != " Normal" ]; then echo "Synchronizing...";sleep 3; fi
+	break
+done
 chronyc tracking
 
 # ------------------------------------------------------
