@@ -34,6 +34,8 @@ done
 systemctl restart chronyd
 
 ## Verify Time Synchronization
+echo; echo "Syncronizing...."; echo
+sleep 5
 chronyc tracking
 
 # ------------------------------------------------------
