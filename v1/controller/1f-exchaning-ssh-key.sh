@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#ssh-copy-id $( cat $WORKING_DIR/inventory.ini |grep 'ansible_ssh' |cut -d'=' -f3 )
+ssh-keygen
 
 data=$( cat $WORKING_DIR/inventory.ini |grep 'ansible_ssh' |cut -d'=' -f3 )
 arr=(${data// / });
@@ -11,5 +11,5 @@ for(( j=0; j<$length; j++ ))
 do
     line=${arr[$j]}
     #echo $line
-    ssh-copy-id $line
+    ssh-copy-id -f $line
 done
