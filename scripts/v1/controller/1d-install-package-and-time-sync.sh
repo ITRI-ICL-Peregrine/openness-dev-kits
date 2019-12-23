@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ENV=Controller
+ENV=controller
 
 if [ "$( hostname )" != "$ENV" ]; then echo; echo ">>> Plz Execute this Script on $ENV <<<"; echo; exit; fi
 
