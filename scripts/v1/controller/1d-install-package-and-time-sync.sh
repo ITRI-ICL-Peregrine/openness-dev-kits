@@ -27,7 +27,7 @@ echo 'maxdistance 999999' >> /etc/chrony.conf
 
 ## Add new NTP server(s)
 for i in `seq 0 3`; do
-	echo 'server $i.centos.pool.ntp.org iburst' >> /etc/chrony.conf
+	echo "server $i.centos.pool.ntp.org iburst" >> /etc/chrony.conf
 done
 
 ## Restart chrony service
