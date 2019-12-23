@@ -1,5 +1,11 @@
 #!/bin/bash
 
+ENV=Controller
+
+if [ "$( hostname )" != "$ENV" ]; then echo; echo ">>> Plz Execute this Script on $ENV <<<"; echo; exit; fi
+
+# ------------------------------------------------------
+
 # Install Necessary Packages
 yum --enablerepo=extras -y install epel-release 
 yum update -y
