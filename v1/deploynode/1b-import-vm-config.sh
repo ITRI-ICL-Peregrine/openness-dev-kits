@@ -18,10 +18,9 @@ echo; echo "Change Hostname - Controller"; echo
 
 IMAGE=Controller.qcow2
 
-#cd $WORKING_DIR/img
-MOUT_DIR=$WORKING_DIR/img/tmp
+MOUT_DIR=/root/img/tmp
 mkdir -p $MOUT_DIR
-guestmount -a $WORKING_DIR/img/$IMAGE  -m /dev/centos/root $MOUT_DIR
+guestmount -a /root/img/$IMAGE  -m /dev/centos/root $MOUT_DIR
 
 mount --bind /dev $MOUT_DIR/dev
 mount --bind /proc $MOUT_DIR/proc
@@ -47,10 +46,9 @@ echo; echo "Change Hostname - EdgeNode"; echo
 
 IMAGE=EdgeNode.qcow2
 
-#cd $WORKING_DIR/img
-MOUT_DIR=$WORKING_DIR/img/tmp
+MOUT_DIR=/root/img/tmp
 mkdir -p $MOUT_DIR
-guestmount -a $WORKING_DIR/img/$IMAGE  -m /dev/centos/root $MOUT_DIR
+guestmount -a /root/img/$IMAGE  -m /dev/centos/root $MOUT_DIR
 
 mount --bind /dev $MOUT_DIR/dev
 mount --bind /proc $MOUT_DIR/proc
