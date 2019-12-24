@@ -16,7 +16,7 @@ length=${#arr[@]}
 for(( j=0; j<$length; j++ )) do
 
     node=${arr[$j]}
-    ssh $node yum instll -y git
+    ssh $node yum install -y git
     ssh $node rm -r /root/openness-dev-kits
     ssh $node git clone https://github.com/ITRI-ICL-Peregrine/openness-dev-kits /root/openness-dev-kits
     ssh $node /root/openness-dev-kits/v1/common/install-package-and-time-sync.sh
