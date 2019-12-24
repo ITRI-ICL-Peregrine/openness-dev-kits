@@ -1,5 +1,12 @@
 #!/bin/bash
 
+ENV=OpenNESS
+
+if [ "$( hostname )" != "openness" ]; then echo; echo ">>> Plz Execute this Script on $ENV <<<"; echo; exit; fi
+
+# --------------------------------------
+
+
 # Import XML
 echo; echo "# Import XML"; echo
 virsh define $TOOLS/deploynode/Controller.xml

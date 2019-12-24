@@ -1,5 +1,11 @@
 #!/bin/bash
 
+ENV=OpenNESS
+
+if [ "$( hostname )" != "openness" ]; then echo; echo ">>> Plz Execute this Script on $ENV <<<"; echo; exit; fi
+
+# --------------------------------------
+
 # Controller
 core_pin_vm_01="1"
 core_pin_vm_02="2"
