@@ -6,6 +6,8 @@ if [ "$( hostname )" != "openness" ]; then echo; echo ">>> Plz Execute this Scri
 
 # --------------------------------------
 
+core_default="0"
+
 # Controller
 core_pin_vm_01="1"
 core_pin_vm_02="2"
@@ -33,8 +35,8 @@ vm2_pids_arr=($(virsh qemu-monitor-command --hmp $VM2_NAME "info cpus " | grep C
 
 
 # QEMU Thread
-taskset -cpa $core_pin_vm_01 ${vm1_pids_arr[0]};
-taskset -cpa $core_pin_vm_01 ${vm2_pids_arr[0]};
+taskset -cpa $core_default ${vm1_pids_arr[0]};
+taskset -cpa $core_default ${vm2_pids_arr[0]};
 
 # Controller VCPU core pinning
 taskset -cp $core_pin_vm_01 ${vm1_pids_arr[0]};
