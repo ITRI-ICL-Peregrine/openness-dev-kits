@@ -2,7 +2,7 @@
 
 ENV=Controller
 
-if [ "$( hostname )" != "controller" ]; then echo; echo ">>> Plz Execute this Script on $ENV <<<"; echo; exit; fi
+if [ "$( hostname )" != "Controller" ]; then echo; echo ">>> Plz Execute this Script on $ENV <<<"; echo; exit; fi
 
 # --------------------------------------
 
