@@ -2,7 +2,7 @@
 
 ENV=EdgeNode
 
-if [ "$( hostname )" != "edgenode" ]; then echo; echo ">>> Plz Execute this Script on $ENV <<<"; echo; exit; fi
+if [ "$( hostname )" != "EdgeNode" ]; then echo; echo ">>> Plz Execute this Script on $ENV <<<"; echo; exit; fi
 
 # --------------------------------------
 
