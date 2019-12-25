@@ -47,4 +47,5 @@ chronyc tracking
 
 # ------------------------------------------------------
 
-
+# Prepare HTTPS CA
+/root/openness-experience-kits/itri/v1/controller/create-https-ca.sh

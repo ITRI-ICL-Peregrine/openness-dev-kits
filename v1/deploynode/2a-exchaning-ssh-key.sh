@@ -20,3 +20,7 @@ do
     #echo $line
     ssh-copy-id -f $line
 done
+
+# --------------------------------------
+
+
