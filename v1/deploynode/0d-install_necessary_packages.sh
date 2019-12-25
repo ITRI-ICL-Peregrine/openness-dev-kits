@@ -16,7 +16,7 @@ libvirt libvirt-python libvirt-client virt-install virt-viewer
 yum install -y yum-utils \
 device-mapper-persistant-data lvm2 ansible python-pip git wget \
 zip unzip nano qemu-kvm qemu kvm \
-dbus-x11 libvirt net-tools libguestfs-tools
+dbus-x11 libvirt net-tools libguestfs-tools firefox
 
 
 # ---------------- Install Docker ----------------------
