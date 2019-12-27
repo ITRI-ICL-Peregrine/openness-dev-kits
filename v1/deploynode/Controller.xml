@@ -1,9 +1,9 @@
 <domain type='kvm'>
   <name>Controller</name>
   <uuid>54c2149a-1063-468f-8a0e-0786c1cc601e</uuid>
-  <memory unit='KiB'>16777216</memory>
-  <currentMemory unit='KiB'>16777216</currentMemory>
-  <vcpu placement='static'>16</vcpu>
+  <memory unit='KiB'>4194304</memory>
+  <currentMemory unit='KiB'>4194304</currentMemory>
+  <vcpu placement='static'>4</vcpu>
   <os>
     <type arch='x86_64' machine='pc-i440fx-rhel7.6.0'>hvm</type>
     <boot dev='hd'/>
@@ -12,9 +12,8 @@
     <acpi/>
     <apic/>
   </features>
-  <cpu mode='host-model' check='partial'>
-    <model fallback='allow'/>
-    <topology sockets='1' cores='16' threads='1'/>
+  <cpu mode='host-passthrough' check='partial'>
+    <topology sockets='1' cores='4' threads='1'/>
   </cpu>
   <clock offset='utc'>
     <timer name='rtc' tickpolicy='catchup'/>
