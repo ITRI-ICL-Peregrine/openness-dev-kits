@@ -12,7 +12,7 @@ fi
 
 data=$( virsh net-dhcp-leases default | grep ipv4 |awk -F "   " '{print $3}' |cut -d"/" -f1 )
 
-arr=(${data// / }); 
+arr=( "192.168.122.111" "192.168.122.222" ); 
 
 length=${#arr[@]} 
 

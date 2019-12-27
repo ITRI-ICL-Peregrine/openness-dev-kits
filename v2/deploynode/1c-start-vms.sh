@@ -14,8 +14,8 @@ virsh start EdgeNode
 
 # ------------------------
 
-$TOOLS/deploynode/pin-core-vm.sh
+./pin-core-vm.sh
 
 # -----------------------
 
-virsh net-dhcp-leases default
+#virsh net-dhcp-leases default
