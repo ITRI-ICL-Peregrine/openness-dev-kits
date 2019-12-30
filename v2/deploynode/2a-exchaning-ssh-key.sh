@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./check-hostname.sh
+$TOOLS/deploynode/check-hostname.sh
 
 status=$( echo $? )
 if [ "$status" == "1" ]; then

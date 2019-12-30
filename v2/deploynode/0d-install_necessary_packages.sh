@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-./check-hostname.sh
+$TOOLS/deploynode/check-hostname.sh
 
 status=$( echo $? )
 if [ "$status" == "1" ]; then
@@ -32,3 +32,18 @@ https://download.docker.com/linux/centos/docker-ce.repo
 yum install -y docker-ce docker-cli containerd.io
 pip install docker-py
 
+# ----------------------------------------------------
+
+echo "clear_emulator_capabilities = 0" >> /etc/libvirt/qemu.conf
+echo 'user = "root"' >> /etc/libvirt/qemu.conf
+echo 'group = "root"' >> /etc/libvirt/qemu.conf
+
+echo "cgroup_device_acl = [" >> /etc/libvirt/qemu.conf
+echo '   "/dev/null", "/dev/full", "/dev/zero",' >> /etc/libvirt/qemu.conf
+echo '   "/dev/random", "/dev/urandom",' >> /etc/libvirt/qemu.conf
+echo '   "/dev/ptmx", "/dev/kvm", "/dev/kqemu",' >> /etc/libvirt/qemu.conf
+echo '   "/dev/rtc", "/dev/hpet", "/dev/net/tun","/dev/vfio/vfio",' >> /etc/libvirt/qemu.conf
+echo "]" >> /etc/libvirt/qemu.conf
+
+# systemctl restart libvirtd.service
+service libvirtd restart

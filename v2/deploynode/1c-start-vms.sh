@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./check-hostname.sh
+$TOOLS/deploynode/check-hostname.sh
 
 status=$( echo $? )
 if [ "$status" == "1" ]; then
@@ -14,7 +14,7 @@ virsh start EdgeNode
 
 # ------------------------
 
-./pin-core-vm.sh
+$TOOLS/deploynode/pin-core-vm.sh
 
 # -----------------------
 
