@@ -24,5 +24,5 @@ for(( j=0; j<$length; j++ )) do
     ssh $node yum install -y git
     ssh $node rm -r /root/openness-dev-kits
     ssh $node git clone https://github.com/ITRI-ICL-Peregrine/openness-dev-kits /root/openness-dev-kits
-    ssh $node /root/openness-dev-kits/v1/common/install-package-and-time-sync.sh
+    ssh $node /root/openness-dev-kits/v2/common/install-package-and-time-sync.sh
 done
