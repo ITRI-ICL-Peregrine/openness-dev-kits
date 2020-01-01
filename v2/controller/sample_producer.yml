@@ -1,5 +1,8 @@
-apiVersion: apps/v1 kind: Deployment metadata:
-  name: producer spec:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: producer
+spec:
   replicas: 1
   selector:
     matchLabels:

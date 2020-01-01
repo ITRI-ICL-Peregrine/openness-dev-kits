@@ -1,6 +1,9 @@
-apiVersion: networking.k8s.io/v1 kind: NetworkPolicy metadata:
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
   name: eaa-prod-cons-policy
-  namespace: default spec:
+  namespace: default
+spec:
   podSelector: {}
   policyTypes:
   - Ingress
