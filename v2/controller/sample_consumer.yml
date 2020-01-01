@@ -17,7 +17,7 @@ spec:
         effect: NoSchedule
       containers:
       - name: consumer
-        image: consumer:1.0
+        image: openvino-cons-app:1.0
         imagePullPolicy: Never
         ports:
         - containerPort: 80
