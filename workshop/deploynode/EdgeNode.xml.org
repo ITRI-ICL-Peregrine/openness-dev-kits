@@ -88,7 +88,7 @@
     </video>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
-        <address domain='0x0000' bus='0xb1' slot='0x00' function='0x0'/>
+        <address domain='0xFIRST_ADDR' bus='0xSECOND_ADDR' slot='0xTHIRD_ADDR' function='0xFOURTH_ADDR'/>
       </source>
       <rom bar='off'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x09' function='0x0'/>

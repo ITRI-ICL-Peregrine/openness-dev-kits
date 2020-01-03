@@ -7,6 +7,24 @@ if [ "$status" == "1" ]; then
         exit;
 fi
 
+# --------------------------------------
+
+# Prepare EdgeNode.xml
+
+sudo cp $TOOLS/deploynode/EdgeNode.xml.org $TOOLS/deploynode/EdgeNode.xml
+
+bus_id=$( ethtool -i $NIC1 |grep bus |cut -d" " -f2 )
+
+first=$( echo $bus_id |cut -d":" -f1 )
+second=$( echo $bus_id |cut -d":" -f2 )
+third=$( echo $bus_id |cut -d":" -f3 |cut -d"." -f1 )
+fourth=$( echo $bus_id |cut -d":" -f3 |cut -d"." -f2 )
+
+sed -i "s/FIRST_ADDR/$first/g" $TOOLS/deploynode/EdgeNode.xml
+sed -i "s/SECOND_ADDR/$second/g" $TOOLS/deploynode/EdgeNode.xml
+sed -i "s/THIRD_ADDR/$third/g" $TOOLS/deploynode/EdgeNode.xml
+sed -i "s/FOURTH_ADDR/$fourth/g" $TOOLS/deploynode/EdgeNode.xml
+
 
 # --------------------------------------
 
