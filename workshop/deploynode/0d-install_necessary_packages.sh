@@ -68,4 +68,4 @@ sudo rm /tmp/exfat-utils-*.x86_64.rpm
 # Create Folder
 
 mkdir -p /home/openness/img
-ln -s /home/openness/img /root/img
+ln -s /home/openness/img /root/
