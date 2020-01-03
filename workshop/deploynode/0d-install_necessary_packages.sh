@@ -48,3 +48,17 @@ echo "]" >> /etc/libvirt/qemu.conf
 
 # systemctl restart libvirtd.service
 service libvirtd restart
+
+# ----------------------------------------------------
+
+# Support exFAT
+wget http://download1.rpmfusion.org/free/el/updates/7/x86_64/f/fuse-exfat-1.3.0-1.el7.x86_64.rpm
+wget http://download1.rpmfusion.org/free/el/updates/7/x86_64/e/exfat-utils-1.3.0-1.el7.x86_64.rpm
+
+mv *.rpm /tmp/
+
+yum install -y /tmp/fuse-exfat-1.3.0-1.el7.x86_64.rpm
+yum install -y /tmp/exfat-utils-1.3.0-1.el7.x86_64.rpm 
+
+sudo rm /tmp/fuse-exfat-*.x86_64.rpm
+sudo rm /tmp/exfat-utils-*.x86_64.rpm
