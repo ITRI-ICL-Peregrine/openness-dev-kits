@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: speedtest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: speedtest
+  template:
+    metadata:
+      labels:
+        app: speedtest
+    spec:
+      tolerations:
+      - key: node-role.kube-ovn/master  
+        effect: NoSchedule
+      containers:
+      - name: openspeedtest
+        image: openspeedtest/latest:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+      - name: librespeed
+        image: adolfintel/speedtest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+      - name: debug
+        image: ubuntu
+        command: [ "/bin/bash", "-c", "--" ]        
+        args: [ "while true; do sleep 300000; done;" ]
+        imagePullPolicy: IfNotPresent
