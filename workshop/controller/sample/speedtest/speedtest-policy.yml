@@ -6,7 +6,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: speedtest
+      name: speedtest
   policyTypes:
   - Ingress
   ingress:
