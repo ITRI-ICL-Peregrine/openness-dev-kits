@@ -11,7 +11,7 @@ fi
 # --------------------------------------
 
 yum --enablerepo=extras -y install epel-release 
-yum update -y
+#yum update -y
 
 yum -y install centos-release-qemu-ev
 yum install -y qemu-kvm-ev qemu-img-ev virt-manager \
