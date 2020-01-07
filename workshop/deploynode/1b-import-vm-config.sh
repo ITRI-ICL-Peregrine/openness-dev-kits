@@ -54,3 +54,8 @@ if test -f /root/img/EdgeNode.qcow2; then echo "EdgeNode.qcow2 exist";else echo 
 
 echo "192.168.122.111 Controller" >> /etc/hosts
 echo "192.168.122.222 EdgeNode" >> /etc/hosts
+
+# ----------------------------------
+
+virsh autostart Controller
+virsh autostart EdgeNode
