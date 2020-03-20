@@ -8,7 +8,7 @@ For documentation please refer to https://github.com/open-ness/specs/blob/master
 
 ## Trouble Shooting
 
-** -source command not found in sh shell**
+### "source command not found in sh shell"
 
 ```shell
 $ls -l `which sh`
