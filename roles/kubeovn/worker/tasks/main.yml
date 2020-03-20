@@ -3,26 +3,26 @@
 
 ---
 
-- name: check if packages installed in proper version
-  shell: rpm -q openvswitch | grep {{ ovn_version }} | wc -l
-  args:
-    warn: false
-  register: rpm_grep
+# - name: check if packages installed in proper version
+#   shell: rpm -q openvswitch | grep {{ ovn_version }} | wc -l
+#   args:
+#     warn: false
+#   register: rpm_grep
 
-- name: (re)install ovs if needed
-  block:
-  - name: remove old packages
-    yum:
-      name: "{{ ovs_packages_to_remove }}"
-      state: absent
-  - name: installing OVS tool dependencies
-    yum:
-      name: "{{ ovs_dependencies_yum }}"
-  - name: installing OVS tool
-    shell: yum install -y {{ ovs_package_url }}
-    args:
-      warn: false
-  when: "'1' not in rpm_grep.stdout"
+# - name: (re)install ovs if needed
+#   block:
+#   - name: remove old packages
+#     yum:
+#       name: "{{ ovs_packages_to_remove }}"
+#       state: absent
+#   - name: installing OVS tool dependencies
+#     yum:
+#       name: "{{ ovs_dependencies_yum }}"
+#   - name: installing OVS tool
+#     shell: yum install -y {{ ovs_package_url }}
+#     args:
+#       warn: false
+#   when: "'1' not in rpm_grep.stdout"
 
 - name: open kube-ovn firewall rules
   ignore_errors: yes

@@ -16,11 +16,11 @@
   - include_tasks: ./tasks/precheck_hostname.yml
 
   roles:
-    - role: os_setup
-    - role: grub
+    # - role: os_setup
+    # - role: grub
     - role: git_repo
-    - role: golang
-    - role: docker
+    # - role: golang
+    # - role: docker
     # - role: opae_fpga/worker
     # - role: sriov/worker
     - role: kubernetes/worker

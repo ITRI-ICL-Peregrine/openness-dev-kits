@@ -3,5 +3,9 @@
 
 ---
 
+- name: Install required packages
+  shell: apt-get install -y jq moreutils
+
+
 - include_tasks: prebuild.yml
 - include_tasks: build.yml

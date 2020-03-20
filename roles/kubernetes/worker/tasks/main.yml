@@ -3,8 +3,8 @@
 
 ---
 
-- name: customize kubelet for topology manager
-  include_tasks: customize_kubelet.yml
+# - name: customize kubelet for topology manager
+#   include_tasks: customize_kubelet.yml
 
 - name: get worker node name
   block:

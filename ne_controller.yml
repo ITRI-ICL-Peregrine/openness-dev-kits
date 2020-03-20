@@ -30,7 +30,7 @@
     - role: cnca/master
     #- role: ngc_test/master
     # - role: opae_fpga/master
-    - role: multus
+    #- role: multus
     - role: nfd
     # - role: biosfw/master
     # - role: sriov/master
