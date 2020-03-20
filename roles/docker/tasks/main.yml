@@ -1,0 +1,76 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2019 Intel Corporation
+
+---
+
+# - name: add Docker repository
+#   yum_repository:
+#     name: docker
+#     description: Docker CE repository
+#     baseurl: "{{ docker_repository_url }}"
+#     gpgkey: "{{ docker_repository_key }}"
+#     gpgcheck: yes
+#   # Do not add remote repositories in offline mode
+#   when: not offline_mode
+
+# - name: clear yum cache
+#   command: yum clean all
+#   args:
+#     warn: false
+
+# - name: install Docker CE
+#   yum:
+#     name: "{{ docker_packages }}"
+#     state: present
+#   notify:
+#   - enable and start docker service
+
+# - name: install docker-compose
+#   pip:
+#     name: "{{ docker_compose_package }}"
+#     state: present
+#   when: not offline_mode
+
+# - name: offline | install docker-compose
+#   pip:
+#     name: "{{ docker_compose_package }}"
+#     state: present
+#     extra_args: "--no-index --find-links {{ offline_pip_path }}"
+#   when: offline_mode
+
+# - name: set up proxy
+#   include_tasks: proxy.yml
+#   when: proxy_os_enable
+
+# - name: set cgroups driver to systemd
+#   block:
+#   - name: make sure /etc/docker/ exists
+#     file:
+#       path: /etc/docker/
+#       state: directory
+#   - name: set cgroups driver to systemd
+#     copy:
+#       src: daemon.json
+#       dest: /etc/docker/daemon.json
+#     notify:
+#     - enable and start docker service
+
+# - name: restart services if needed
+#   meta: flush_handlers
+
+# - name:  Find docker audit files
+#   stat:
+#     path: "{{ item }}"
+#   with_items: " {{ docker_audit_files }} "
+#   register: stats
+
+# - name: Add audit rules for docker
+#   lineinfile:
+#     path: /etc/audit/rules.d/docker.rules
+#     line: "-w {{ item.item }} -k docker"
+#     create: yes
+#   when: item.stat.exists
+#   with_items: "{{ stats.results }}"
+
+# - name: Restart auditd
+#   shell: service auditd restart
