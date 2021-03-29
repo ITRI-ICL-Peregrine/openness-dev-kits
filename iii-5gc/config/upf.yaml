@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: upf-config
+  namespace: default
+data:
+  upf.conf: |+
+    SMF_N4_Address = "192.168.102.2";
+    UPF_N3_Address = "192.168.102.4";
+    UPF_N4_Address = "192.168.102.4";
+    UPF_N6_Address = "100.86.1.111";
+    UPF_N6_NIC_NAME = "n6";

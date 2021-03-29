@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: smf-config
+  namespace: default
+data:
+  smf.conf: |+
+    PLMN = "466.66";
+    DNN = "Internet";
+    AMF_SBI_Address = "192.168.102.1";
+    SMF_SBI_Address = "192.168.102.2";
+    SMF_N4_Address = "192.168.102.2";
+    PCF_SBI_Address = "192.168.102.3";
+    UPF_N3_Address = "192.168.102.4";
+    UPF_N4_Address = "192.168.102.4";
+    IUPF_N3_Address = "192.168.102.4";
+    IUPF_N4_Address = "192.168.102.4";
+    IUPF_N9_Address = "192.168.102.4";
+    UeList =
+    (
+        {
+            imsi = "466.66.6100000001";
+        },
+        {
+            imsi = "466.66.6100000002";
+        },
+        {
+            imsi = "466.66.6100000003";
+        },
+        {
+            imsi = "466.66.6100000004";
+        },
+        {
+            imsi = "466.66.6100000005";
+        },
+        {
+            imsi = "466.66.6100000006";
+        },
+        {
+            imsi = "466.66.6100000007";
+        },
+        {
+            imsi = "466.66.6100000008";
+        },
+        {
+            imsi = "466.66.6100000009";
+        },
+        {
+            imsi = "466.66.6100000010";
+        }
+    );
